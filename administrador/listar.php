@@ -45,13 +45,13 @@ $datos=$stmt->fetchAll(PDO::FETCH_OBJ);
 			
 			<?php foreach ( $datos as $dato ) { ?>
 			<tr>
-				<td class="text-right"><?= $dato->idusuario ?></td>
+				<td ><?= $dato->idusuario ?></td>
 				<td><?= $dato->usuario ?></td>
-				<td class="text-center"><?= $dato->tipousuario ?></td>
+				<td ><?= $dato->tipousuario ?></td>
 				<td><?= $dato->apellido ?>, <?= $dato->nombre ?></td>
-				<td class="text-right">(<?= $dato->tipodocumento ?>) <?= $dato->numerodocumento ?></td>
+				<td >(<?= $dato->tipodocumento ?>) <?= $dato->numerodocumento ?></td>
 				<td><?= $dato->email ?></td> 
-				<td class="text-center">
+				<td>
 					<a href="editar.php?id=<?= $dato->idusuario ?>" title="Editar"><strong>Editar </strong> </a>
 					<a href="eliminar.php?id=<?= $dato->idusuario ?>" title="Eliminar"><strong> Eliminar</strong></a>
 				</td>

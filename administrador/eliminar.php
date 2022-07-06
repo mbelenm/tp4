@@ -8,14 +8,7 @@ require_once  '../includes/php/conexion.php';
 
 $dbh = conectarDB();
 
-$query = "select
-u.idusuario
-,u.nombre as usuario
-,p.apellido
-,p.nombre
-from usuario u
-inner join persona p using(idpersona)
-where u.idusuario = :idUsuario";
+$query = "select u.idusuario ,u.nombre as usuario ,per.apellido ,per.nombre from usuario u inner join persona per using(idpersona) where u.idusuario = :idUsuario";
 
 $stmt = $dbh->prepare($query);
 $stmt->bindValue(':idUsuario', $idUsuario, PDO::PARAM_INT);
