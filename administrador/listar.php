@@ -32,7 +32,7 @@ $filas=$stmt->fetchAll(PDO::FETCH_OBJ);
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Usuario Gugler</title>
-	<link type="text/css" rel="stylesheet" href="/includes/css/estilos.css">
+	<link type="text/css" rel="stylesheet" href="../includes/css/estilos.css">
 </head>
 <body>
 
@@ -63,10 +63,10 @@ $filas=$stmt->fetchAll(PDO::FETCH_OBJ);
 				<td class="text-center"><?= $fila->tipousuario ?></td>
 				<td><?= $fila->apellido ?>, <?= $fila->nombre ?></td>
 				<td class="text-right">(<?= $fila->tipodocumento ?>) <?= $fila->numerodocumento ?></td>
-				<td><?= $fila->email ?></td>
+				<td><?= $fila->email ?></td> 
 				<td class="text-center">
-					<a href="editar.php?id=<?= $fila->idusuario ?>" title="Editar"><img alt="Modificar" src="/tp5/includes/img/edit.png"></a>
-					<a href="eliminar.php?id=<?= $fila->idusuario ?>" title="Eliminar"><img alt="Eliminar" src="/tp5/includes/img/delete.png"></a>
+					<a href="editar.php?id=<?= $fila->idusuario ?>" title="Editar"><strong>Editar </strong> </a>
+					<a href="eliminar.php?id=<?= $fila->idusuario ?>" title="Eliminar"><strong> Eliminar</strong></a>
 				</td>
 			</tr>
 			<?php } ?>
@@ -79,6 +79,6 @@ $filas=$stmt->fetchAll(PDO::FETCH_OBJ);
 	
 </div>
 
-<?php require_once  'includes/php/footer.php'; ?>
+<?php require_once  '../includes/php/footer.php'; ?>
 </body>
 </html>

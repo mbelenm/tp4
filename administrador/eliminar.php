@@ -40,7 +40,7 @@ $resultado = $stmt->fetchObject();
 	
 	<form action="eliminar_usuario.php" method="post">
 		
-		<input type="hidden" name="idUsuario" value="<?= $idusuario ?>">
+		<input type="hidden" name="idUsuario" value="<?= $idUsuario ?>">
 
 		<div class="mensaje">
 
@@ -50,7 +50,7 @@ $resultado = $stmt->fetchObject();
 			</p>
 
 			<div class="buttons">
-				<input type="button" value="No" onclick="document.location='administrador'">
+				<input type="button" value="No" onclick="document.location='../administrador'">
 				<input type="submit" name="bt_eliminar" value="Si">
 			</div>
 		</div>
