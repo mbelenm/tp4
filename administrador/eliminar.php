@@ -35,7 +35,7 @@ $resultado = $stmt->fetchObject();
 <div class="wraper">
 
 	<?php require_once  '../includes/php/header.php' ?>
-    <?php require_once 'opcionesAdm.php'; ?>
+ 
 
 	
 	<form action="eliminar_usuario.php" method="post">
@@ -51,12 +51,12 @@ $resultado = $stmt->fetchObject();
 
 			<div class="buttons">
 				<input type="button" value="No" onclick="document.location='../administrador'">
-				<input type="submit" name="bt_eliminar" value="Si">
+				<input type="submit" name="bt_eliminar" value="Si" onclick="document.location='../administrador'" >
 			</div>
 		</div>
 
 	</form>
-	
+	<?php require_once 'opcionesAdm.php'; ?>
 	<div class="push"></div>
 	
 </div>

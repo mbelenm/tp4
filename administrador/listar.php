@@ -6,24 +6,12 @@ require_once '../includes/php/conexion.php';
 
 $dbh = conectarDB();
 
-$query = "select
-		u.idusuario
-		,u.nombre as usuario
-		,p.apellido
-		,p.nombre
-		,p.numerodocumento
-		,p.email
-		,td.nombre as tipodocumento
-		,tu.nombre as tipousuario
-	from persona p
-	inner join tipodocumento td using(idtipodocumento)
-	inner join usuario u using(idpersona)
-	inner join tipousuario tu using(idtipousuario)";
+$query = "select u.idusuario ,u.nombre as usuario ,per.apellido ,per.nombre ,per.numerodocumento ,per.email ,td.nombre as tipodocumento ,tu.nombre as tipousuario from persona per inner join tipodocumento td using(idtipodocumento) inner join usuario u using(idpersona)inner join tipousuario tu using(idtipousuario)";
 
 
 $stmt = $dbh->query($query);
 
-$filas=$stmt->fetchAll(PDO::FETCH_OBJ);
+$datos=$stmt->fetchAll(PDO::FETCH_OBJ);
 
 
 ?>
@@ -32,47 +20,47 @@ $filas=$stmt->fetchAll(PDO::FETCH_OBJ);
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Usuario Gugler</title>
-	<link type="text/css" rel="stylesheet" href="../includes/css/estilos.css">
+<link type="text/css" rel="stylesheet" href="../includes/css/estilos.css">
+<link type="text/css" rel="stylesheet" href="estiloAdm.css">
 </head>
 <body>
 
 <div class="wraper">
 
 	<?php require_once  '../includes/php/header.php'; ?>
-	<?php require_once 'opcionesAdm.php'; ?>
 
 	<fieldset>
 		<legend>Usuarios Gugler</legend>
+		<div class="tabla">
+		<table >
+			<tr>
+				<th class="separador">Id Usuario</th>
+				<th class="separador">Usuario</th>
+				<th class="separador">Tipo user</th>
+				<th class="separador">Apellido - Nombre</th>
+				<th class="separador">Documentp</th>
+				<th class="separador">Email</th>
+				<th class="separador">Administrar</th>
 		
-		<table>
 			
+			<?php foreach ( $datos as $dato ) { ?>
 			<tr>
-				<th>ID</th>
-				<th>USUARIO</th>
-				<th>TIPO</th>
-				<th>APELLIDO Y NOMBRE</th>
-				<th>DOC</th>
-				<th>EMAIL</th>
-				<th>ACCIONES</th>
-			</tr>
-			
-			<?php foreach ( $filas as $fila ) { ?>
-			<tr>
-				<td class="text-right"><?= $fila->idusuario ?></td>
-				<td><?= $fila->usuario ?></td>
-				<td class="text-center"><?= $fila->tipousuario ?></td>
-				<td><?= $fila->apellido ?>, <?= $fila->nombre ?></td>
-				<td class="text-right">(<?= $fila->tipodocumento ?>) <?= $fila->numerodocumento ?></td>
-				<td><?= $fila->email ?></td> 
+				<td class="text-right"><?= $dato->idusuario ?></td>
+				<td><?= $dato->usuario ?></td>
+				<td class="text-center"><?= $dato->tipousuario ?></td>
+				<td><?= $dato->apellido ?>, <?= $dato->nombre ?></td>
+				<td class="text-right">(<?= $dato->tipodocumento ?>) <?= $dato->numerodocumento ?></td>
+				<td><?= $dato->email ?></td> 
 				<td class="text-center">
-					<a href="editar.php?id=<?= $fila->idusuario ?>" title="Editar"><strong>Editar </strong> </a>
-					<a href="eliminar.php?id=<?= $fila->idusuario ?>" title="Eliminar"><strong> Eliminar</strong></a>
+					<a href="editar.php?id=<?= $dato->idusuario ?>" title="Editar"><strong>Editar </strong> </a>
+					<a href="eliminar.php?id=<?= $dato->idusuario ?>" title="Eliminar"><strong> Eliminar</strong></a>
 				</td>
 			</tr>
 			<?php } ?>
 			
 		</table>
-		
+		<?php require_once 'opcionesAdm.php'; ?>
+		</div>
 	</fieldset>
 	
 	<div class="push"></div>

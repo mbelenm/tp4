@@ -28,7 +28,7 @@ $resultado = $stmt->fetchObject();
 <div class="wraper">
 
 	<?php require_once '../includes/php/header.php' ?>
-	<?php require_once 'opcionesAdm.php'; ?>
+	
 
 
 	<form action="editar_usuario.php" method="post">
@@ -115,9 +115,10 @@ $resultado = $stmt->fetchObject();
 
 		<fieldset>
 			<div class="buttons">
-				<input type="submit" name="bt_guardar" value="Guardar" onclick="document.location='administrador'" >
+				<input type="submit" name="bt_guardar" value="Guardar" onclick="document.location='../administrador/listar.php'" >
 				<input type="button" value="Cancelar" onclick="document.location='../administrador'">
 			</div>
+			<?php require_once 'opcionesAdm.php'; ?>
 		</fieldset>
 
 	</form>
