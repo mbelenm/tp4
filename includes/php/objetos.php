@@ -25,3 +25,9 @@ $aProvincia = array(
 	new Provincia(5,'Catamarca'),
 	new Provincia(6,'Corrientes'),
 );
+
+
+$aTipoUsuario = array(
+	1 => 'Administrador',
+	2 => 'Normal'
+);

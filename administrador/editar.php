@@ -44,9 +44,9 @@ $resultado = $stmt->fetchObject();
 
 				<li><label>Tipo de Usuario:</label></li>
 				<li>
-					<select name="tipo_usuario">
+				<select name="tipo_usuario">
 						<?php foreach ( $aTipoUsuario as $id => $descripcion ) { ?>
-							<option value="<?= $id ?>" <?= ( $resultado->idTipousuario == $id ) ? 'selected="selected"' : ''  ?>><?= $descripcion ?></option>
+							<option value="<?= $id ?>" <?= ( $resultado->idtipousuario == $id ) ? 'selected="selected"' : ''  ?>><?= $descripcion ?></option>
 						<?php } ?>
 					</select>
 				</li>

@@ -225,7 +225,7 @@ if ( $validarCorrectas == true )
 		<?php } ?>
 
 		<div class="buttons">
-			<input type="button" value="Anterior" onclick="document.location='administrador'">
+			<input type="button" value="Anterior" onclick="document.location='editar_usuario.php'">
 		</div>
 	</div>
 
