@@ -115,7 +115,7 @@ $resultado = $stmt->fetchObject();
 
 		<fieldset>
 			<div class="buttons">
-				<input type="submit" name="bt_guardar" value="Guardar">
+				<input type="submit" name="bt_guardar" value="Guardar" onclick="document.location='administrador'" >
 				<input type="button" value="Cancelar" onclick="document.location='../administrador'">
 			</div>
 		</fieldset>

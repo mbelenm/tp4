@@ -69,7 +69,7 @@ else
 <head>
 	<meta charset="ISO-8859-1">
 	<title>SGU | Formulario de Inscripc&oacute;n</title>
-	<link type="text/css" rel="stylesheet" href="/tp4/includes/css/estilos.css">
+	<link type="text/css" rel="stylesheet" href="includes/css/estilos.css">
 </head>
 <body>
 
